@@ -110,6 +110,9 @@ export const CustomTheme = createTheme({
       fontSize: "16px",
       lineHeight: "24px",
     },
+    button: {
+      textTransform: "none",
+    },
   },
   components: {
     MuiContainer: {
