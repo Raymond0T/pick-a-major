@@ -55,13 +55,14 @@ function Home() {
         </FlexContainer>
       </FlexContainer>
 
-      <FlexContainer sx={{ flexDirection: "row" }}>
+      <FlexContainer sx={{ flexDirection: "row", minWidth: "100%" }}>
         <FlexContainer
           sx={{
             position: "absolute",
             bottom: "-125%",
             justifyContent: "space-between",
             zIndex: "-1",
+            minWidth: "100%",
           }}
         >
           <div className="Home_Button_Bg_Left">
