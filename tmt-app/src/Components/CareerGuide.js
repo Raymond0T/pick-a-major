@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Autocomplete,
   Box,
   Container,
   Grid,
@@ -20,6 +21,7 @@ function CareerGuide() {
     }
   };
 
+  const filters = ["A to Z", "Z to A"];
   return (
     <Grid
       container
@@ -96,6 +98,43 @@ function CareerGuide() {
               }}
             />
           </Container>
+          <FlexContainer sx={{ justifyContent: "space-between" }}>
+            <Typography display="inline" variant="CustomHeading3">
+              Major Result
+            </Typography>
+            <Container sx={{ margin: "0", width: "auto" }}>
+              <Typography variant="CustomSubHeading">Sort By:</Typography>
+              <Autocomplete
+                sx={{
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                  width: "125px",
+                  margin: "0",
+                  "& .MuiFormControl-root": {
+                    paddingLeft: "1.50rem",
+                  },
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
+                  "& .MuiOutlinedInput-root .MuiAutocomplete-endAdornment": {
+                    right: "20px",
+                  },
+                  "& .MuiButtonBase-root": {
+                    width: "100px",
+                    borderRadius: "0",
+                    justifyContent: "flex-end",
+                    transform: "none",
+                  },
+                }}
+                disableClearable
+                defaultValue="A to Z"
+                id="filter"
+                options={filters}
+                autoHighlight
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </Container>
+          </FlexContainer>
         </FlexContainer>
       </Grid>
       <Grid item xs={4}>
