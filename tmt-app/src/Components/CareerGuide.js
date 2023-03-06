@@ -12,6 +12,10 @@ import {
 } from "@mui/material";
 import { FlexContainer, PrimaryBtn } from "../Styling/CustomStyling.js";
 import SearchIcon from "@mui/icons-material/Search";
+import MajorCard from "./MajorCard.js";
+import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
+import { CareersData } from "../Data/BobaData.js";
+import { AspectRatio } from "@mui/icons-material";
 
 function CareerGuide() {
   const [selection, setSelection] = useState("Majors");
@@ -37,7 +41,23 @@ function CareerGuide() {
         },
       }}
     >
-      <Grid item xs={8}>
+      <Grid item xs={8} sx={{ position: "relative" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            left: "10%",
+            top: "-45%",
+          }}
+        >
+          <img
+            src={MilkTeaSwiggle2}
+            alt="MilkTeaSwiggle2"
+            style={{
+              transform: "rotate(10deg)",
+              width: "100%",
+            }}
+          />
+        </Box>
         <FlexContainer
           sx={{
             flexDirection: "column",
@@ -74,7 +94,7 @@ function CareerGuide() {
               <ToggleButton
                 variant="customToggleStyle"
                 value="Majors"
-                disableRipple="True"
+                disableRipple
               >
                 <Typography variant="CustomHeading3">Majors</Typography>
               </ToggleButton>
@@ -88,7 +108,7 @@ function CareerGuide() {
               sx={{ "& .MuiInputBase-input": { padding: "6px" } }}
               InputProps={{
                 startAdornment: (
-                  <InputAdornment>
+                  <InputAdornment position="start">
                     <SearchIcon />
                   </InputAdornment>
                 ),
@@ -135,6 +155,13 @@ function CareerGuide() {
               />
             </Container>
           </FlexContainer>
+          <MajorCard />
+          <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
+            All Majors
+          </Typography>
+          {CareersData.map((item) => (
+            <div key={item.id}>{item.name}</div>
+          ))}
         </FlexContainer>
       </Grid>
       <Grid item xs={4}>
@@ -149,8 +176,8 @@ function CareerGuide() {
               </Typography>
             </FlexContainer>
           </Box>
-          <PrimaryBtn>
-            <Typography>Take the Quiz</Typography>
+          <PrimaryBtn disabled sx={{ backgroundColor: "#9EA0B1" }}>
+            <Typography variant="CustomHeading2">Take the Quiz</Typography>
           </PrimaryBtn>
         </FlexContainer>
       </Grid>
