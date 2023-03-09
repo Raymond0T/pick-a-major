@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { Container } from "@mui/system";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 
 function MajorCard() {
   const dummyData = [
