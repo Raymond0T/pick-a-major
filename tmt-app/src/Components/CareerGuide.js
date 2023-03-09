@@ -10,11 +10,12 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import { FlexContainer, PrimaryBtn } from "../Styling/CustomStyling.js";
+import { FlexContainer } from "../Styling/CustomStyling.js";
 import SearchIcon from "@mui/icons-material/Search";
 import MajorCard from "./MajorCard.js";
 import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
-import { CareersData } from "../Data/BobaData.js";
+import MajorCareerList from "./MajorCareerList.js";
+import GuideSidebar from "./GuideSidebar.js";
 import { AspectRatio } from "@mui/icons-material";
 
 function CareerGuide() {
@@ -156,30 +157,11 @@ function CareerGuide() {
             </Container>
           </FlexContainer>
           <MajorCard />
-          <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
-            All Majors
-          </Typography>
-          {CareersData.map((item) => (
-            <div key={item.id}>{item.name}</div>
-          ))}
+          <MajorCareerList />
         </FlexContainer>
       </Grid>
       <Grid item xs={4}>
-        <FlexContainer sx={{ flexDirection: "column" }}>
-          <Box sx={{ width: "60%", textAlign: "center" }}>
-            <FlexContainer>
-              <Typography variant="CustomTitle">Major Guide</Typography>
-            </FlexContainer>
-            <FlexContainer>
-              <Typography variant="CustomHeading2">
-                Explore majors, careers, & more
-              </Typography>
-            </FlexContainer>
-          </Box>
-          <PrimaryBtn disabled sx={{ backgroundColor: "#9EA0B1" }}>
-            <Typography variant="CustomHeading2">Take the Quiz</Typography>
-          </PrimaryBtn>
-        </FlexContainer>
+        <GuideSidebar />
       </Grid>
     </Grid>
   );
