@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexContainer } from "../Styling/CustomStyling.js";
 import { Container, Typography } from "@mui/material";
-import { CAREERS_LIST, MAJORS_LIST } from "../Data/BobaData.js";
+import { CAREERS_LIST, MAJORS_LIST } from "../Data/BOBADATA.js";
 
 function MajorCareerList() {
   return (
