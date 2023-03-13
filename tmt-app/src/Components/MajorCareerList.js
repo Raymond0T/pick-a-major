@@ -12,17 +12,17 @@ function MajorCareerList() {
     >
       <Container>
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
-          Careers
+          Major
         </Typography>
-        {CareersData.map((item) => (
+        {MajorsData.map((item) => (
           <div key={item.id}>{item.name}</div>
         ))}
       </Container>
       <Container>
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
-          Major
+          Careers
         </Typography>
-        {MajorsData.map((item) => (
+        {CareersData.map((item) => (
           <div key={item.id}>{item.name}</div>
         ))}
       </Container>

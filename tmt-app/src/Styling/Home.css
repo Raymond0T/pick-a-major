@@ -12,8 +12,8 @@
     Home page Buttons Stlying
 */
 .Home_Button_Main_Link {
-  text-decoration: underline;
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 4rem;
 }

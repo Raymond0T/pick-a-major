@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "../Styling/Home.css";
 import { PrimaryBtn, FlexContainer } from "../Styling/CustomStyling.js";
-import { Link, Container, Typography } from "@mui/material";
+import { Link, Container, Typography, Button } from "@mui/material";
 import MilkTeaBlob from "../Images/MilkTeaBlob.png";
 import LycheeRectangle from "../Images/LycheeRectangle.png";
 import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
 import ThaiTeaSwiggle1 from "../Images/ThaiTeaSwiggle1.png";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Breadcrumb from "./Breadcrumb";
 import { Link as RouterLink } from "react-router-dom";
+const MajorCareerList = lazy(() => import("./MajorCareerList.js"));
+const GuideSidebar = lazy(() => import("./GuideSidebar.js"));
 
 function Home() {
+  const [displayGuide, setDisplayGuide] = useState(false);
+  const changeDisplay = () => {
+    setDisplayGuide(!displayGuide);
+  };
+
   return (
     <Container
       sx={{
@@ -95,9 +103,9 @@ function Home() {
             <Typography variant="CustomHeading2">Take the Quiz</Typography>
           </PrimaryBtn>
 
-          <div className="Home_Button_Main_Link">
+          <FlexContainer sx={{ marginTop: "4.5rem", flexDirection: "column" }}>
             <Link
-              sx={{ color: "Boba.main" }}
+              sx={{ color: "Boba.main", textDecoration: "underline" }}
               underline="none"
               target="_blank"
               rel="noopener noreferrer"
@@ -106,15 +114,46 @@ function Home() {
               to="/guide"
             >
               <Typography variant="CustomSubHeading">
-                See all Majors/Careers
+                view career and major list
               </Typography>
             </Link>
-            <ArrowRightAltIcon
-              sx={{ paddingTop: "3px", paddingLeft: "10px" }}
-            />
-          </div>
+            <Button onClick={changeDisplay}>
+              <Typography variant="CustomSubHeading">
+                See all Majors/Careers
+              </Typography>
+              {displayGuide ? (
+                <ArrowUpwardIcon
+                  sx={{ paddingTop: "3px", paddingLeft: "10px" }}
+                />
+              ) : (
+                <ArrowDownwardIcon
+                  sx={{ paddingTop: "3px", paddingLeft: "10px" }}
+                />
+              )}
+            </Button>
+          </FlexContainer>
         </FlexContainer>
       </FlexContainer>
+      <Container
+        sx={{
+          display: "flex",
+          alignItems: "flex-start",
+          paddingTop: "8rem",
+          opacity: displayGuide ? "100%" : "0%",
+          visibility: displayGuide ? "visible" : "hidden",
+          transition: "450ms ease-in-out",
+          position: "absolute",
+          left: "50%",
+          transform: "translate(-50%, 0)",
+          bottom: displayGuide ? "-50%" : "-10%",
+          zIndex: "-10",
+        }}
+      >
+        <Suspense fallback={<div>Loading...</div>}>
+          <MajorCareerList />
+          <GuideSidebar />
+        </Suspense>
+      </Container>
     </Container>
   );
 }

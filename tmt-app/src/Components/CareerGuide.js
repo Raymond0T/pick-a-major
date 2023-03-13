@@ -13,6 +13,7 @@ import {
 import { FlexContainer } from "../Styling/CustomStyling.js";
 import SearchIcon from "@mui/icons-material/Search";
 import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
+import ThaiTeaSwiggle2 from "../Images/art/Thai_Tea_Swiggle_2.png";
 const MajorCard = lazy(() => import("./MajorCard.js"));
 const MajorCareerList = lazy(() => import("./MajorCareerList.js"));
 const GuideSidebar = lazy(() => import("./GuideSidebar.js"));
@@ -32,7 +33,6 @@ function CareerGuide() {
         container
         sx={{
           paddingTop: "7.5rem",
-          overflow: "hidden",
           minHeight: "100vh",
           width: "100%",
           paddingX: "5rem",
@@ -161,6 +161,24 @@ function CareerGuide() {
             </FlexContainer>
             <MajorCard />
             <MajorCareerList />
+            <Box
+              sx={{
+                position: "absolute",
+                zIndex: "-5",
+                transform: "rotate(53deg)",
+                bottom: "-35%",
+                left: "-5%",
+                width: "450px",
+                height: "450px",
+              }}
+            >
+              <img
+                src={ThaiTeaSwiggle2}
+                alt="Thai_Tea_Swiggle_2"
+                width="450px"
+                height="450px"
+              />
+            </Box>
           </FlexContainer>
         </Grid>
         <Grid item xs={4}>

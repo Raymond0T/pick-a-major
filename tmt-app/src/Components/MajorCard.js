@@ -1,17 +1,28 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Stack,
+  Typography,
+  Container,
+} from "@mui/material";
+import { ReactComponent as EmotionalIntelligence } from "../Images/icons/emotional_intelligence.svg";
+//<img src={EmotionalIntelligence} alt="emotional_intelligence" />
 
 function MajorCard() {
   const dummyData = [
     {
       id: 0,
-      major: "Education",
-      info: "testing",
+      name: "Education",
+      desc: "testing",
+      icon: "/src/Images/icons/emotional_intelligence.svg",
     },
     {
       id: 1,
-      major: "Economics and Business",
-      info: "test fdasf afas fsadf dsf dsf edsf ds fsdaf sd f asfsd fea fgdsffdsf dfasdf ds fsdafsdf fgsdaf ased fasd few gasef sWEAFGASDFAS FDFSA DFA FSADF EAFSDASD FGREAASDFG EF GRasdfga gadfaefadf asf ",
+      name: "Economics and Business",
+      desc: "test fdasf afas fsadf dsf dsf edsf ds fsdaf sd f asfsd fea fgdsffdsf dfasdf ds fsdafsdf fgsdaf ased fasd few gasef sWEAFGASDFAS FDFSA DFA FSADF EAFSDASD FGREAASDFG EF GRasdfga gadfaefadf asf ",
+      icon: "/Images/icons/emotional_intelligence.svg",
     },
   ];
   return (
@@ -33,13 +44,14 @@ function MajorCard() {
             key={item.id}
             sx={{
               display: "flex",
-              backgroundColor: "BTMilkTea.main",
+              backgroundColor: "Matcha.main",
               borderRadius: "15px",
+              color: "white",
             }}
           >
             <CardMedia
               component="img"
-              image="@mui/icons-material/ArrowRightAlt"
+              image={item.icon}
               alt="icon"
               sx={{
                 padding: "1.5rem",
@@ -55,13 +67,28 @@ function MajorCard() {
               sx={{
                 display: "inline-block",
                 width: "100%",
+                overflow: "hidden",
                 whiteSpace: "nowrap",
                 padding: "2.5rem",
               }}
             >
-              <Typography variant="CustomHeading1" sx={{ display: "block" }}>
-                {item.major}
-              </Typography>
+              <Container
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  variant="CustomHeading1"
+                  sx={{
+                    display: "block",
+                    width: "100%",
+                  }}
+                >
+                  {item.name}
+                </Typography>
+                <EmotionalIntelligence />
+              </Container>
               <Typography
                 variant="CustomBody"
                 sx={{
@@ -72,7 +99,7 @@ function MajorCard() {
                   maxWidth: "60%",
                 }}
               >
-                {item.info}
+                {item.desc}
               </Typography>
             </CardContent>
           </Card>
