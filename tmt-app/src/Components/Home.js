@@ -15,8 +15,8 @@ const GuideSidebar = lazy(() => import("./GuideSidebar.js"));
 
 function Home() {
   const [displayGuide, setDisplayGuide] = useState(false);
-  const changeDisplay = () => {
-    setDisplayGuide(!displayGuide);
+  const toggleDisplayGuide = () => {
+    setDisplayGuide((previous) => !previous);
   };
 
   return (
@@ -117,7 +117,7 @@ function Home() {
                 view career and major list
               </Typography>
             </Link>
-            <Button onClick={changeDisplay}>
+            <Button onClick={toggleDisplayGuide}>
               <Typography variant="CustomSubHeading">
                 See all Majors/Careers
               </Typography>

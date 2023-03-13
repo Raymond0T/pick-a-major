@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexContainer } from "../Styling/CustomStyling.js";
 import { Container, Typography } from "@mui/material";
-import { CareersData, MajorsData } from "../Data/BobaData.js";
+import { CAREERS_LIST, MAJORS_LIST } from "../Data/BobaData.js";
 
 function MajorCareerList() {
   return (
@@ -14,7 +14,7 @@ function MajorCareerList() {
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Major
         </Typography>
-        {MajorsData.map((item) => (
+        {MAJORS_LIST.map((item) => (
           <div key={item.id}>{item.name}</div>
         ))}
       </Container>
@@ -22,7 +22,7 @@ function MajorCareerList() {
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Careers
         </Typography>
-        {CareersData.map((item) => (
+        {CAREERS_LIST.map((item) => (
           <div key={item.id}>{item.name}</div>
         ))}
       </Container>

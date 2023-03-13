@@ -1,4 +1,4 @@
-export const CareersData = [
+export const CAREERS_LIST = [
   {
     id: 0,
     name: "Accounting/Finance",
@@ -81,7 +81,7 @@ export const CareersData = [
   },
 ];
 
-export const MajorsData = [
+export const MAJORS_LIST = [
   {
     id: 0,
     name: "Biology & Health",
@@ -228,7 +228,7 @@ export const MajorsData = [
   },
 ];
 
-export const ClassSubjectData = [
+export const CLASS_SUBJECT_LIST = [
   {
     id: 0,
     name: "Anatomy",
@@ -331,7 +331,7 @@ export const ClassSubjectData = [
   },
 ];
 
-export const SoftSkillsData = [
+export const SOFT_SKILL_LIST = [
   {
     id: 0,
     name: "Public Speaking",
@@ -369,7 +369,7 @@ export const SoftSkillsData = [
   },
 ];
 
-export const FieldOfStudyData = [
+export const FIELD_OF_STUDY_LIST = [
   {
     id: 0,
     name: "Biology & Health",

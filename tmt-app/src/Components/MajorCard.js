@@ -8,7 +8,6 @@ import {
   Container,
 } from "@mui/material";
 import { ReactComponent as EmotionalIntelligence } from "../Images/icons/emotional_intelligence.svg";
-//<img src={EmotionalIntelligence} alt="emotional_intelligence" />
 
 function MajorCard() {
   const dummyData = [
