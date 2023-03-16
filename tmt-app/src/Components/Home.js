@@ -63,12 +63,13 @@ function Home() {
         </FlexContainer>
       </FlexContainer>
 
-      <FlexContainer sx={{ flexDirection: "row", minWidth: "100%" }}>
+      <FlexContainer sx={{ minWidth: "100%" }}>
         <FlexContainer
           sx={{
             position: "absolute",
             bottom: "-125%",
             justifyContent: "space-between",
+            flexDirection: "row",
             zIndex: "-1",
             minWidth: "100%",
           }}

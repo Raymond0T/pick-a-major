@@ -14,17 +14,21 @@ function MajorCareerList() {
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Major
         </Typography>
-        {MAJORS_LIST.map((item) => (
-          <div key={item.id}>{item.name}</div>
-        ))}
+        <div>
+          {MAJORS_LIST.map((item) => (
+            <div key={item.id}>{item.name}</div>
+          ))}
+        </div>
       </Container>
       <Container>
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Careers
         </Typography>
-        {CAREERS_LIST.map((item) => (
-          <div key={item.id}>{item.name}</div>
-        ))}
+        <div>
+          {CAREERS_LIST.map((item) => (
+            <div key={item.id}>{item.name}</div>
+          ))}
+        </div>
       </Container>
     </FlexContainer>
   );

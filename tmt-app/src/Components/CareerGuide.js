@@ -12,13 +12,13 @@ import {
 } from "@mui/material";
 import { FlexContainer } from "../Styling/CustomStyling.js";
 import SearchIcon from "@mui/icons-material/Search";
-import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
 import ThaiTeaSwiggle2 from "../Images/art/Thai_Tea_Swiggle_2.png";
 const MajorCard = lazy(() => import("./MajorCard.js"));
 const MajorCareerList = lazy(() => import("./MajorCareerList.js"));
 const GuideSidebar = lazy(() => import("./GuideSidebar.js"));
 
 function CareerGuide() {
+  const filters = ["A to Z", "Z to A"];
   const [selection, setSelection] = useState("Majors");
   const handleChoice = (event, newSelection) => {
     if (newSelection !== null) {
@@ -26,7 +26,6 @@ function CareerGuide() {
     }
   };
 
-  const filters = ["A to Z", "Z to A"];
   return (
     <Suspense fallback={<div>Loading....</div>}>
       <Grid
@@ -35,30 +34,27 @@ function CareerGuide() {
           paddingTop: "7.5rem",
           minHeight: "100vh",
           width: "100%",
-          paddingX: "5rem",
+          paddingX: {
+            xs: "0",
+            sm: "0",
+            md: "5rem",
+          },
           flexDirection: {
             xs: "column",
             md: "row",
           },
         }}
       >
-        <Grid item xs={8} sx={{ position: "relative" }}>
-          <Box
-            sx={{
-              position: "absolute",
-              left: "10%",
-              top: "-45%",
-            }}
-          >
-            <img
-              src={MilkTeaSwiggle2}
-              alt="MilkTeaSwiggle2"
-              style={{
-                transform: "rotate(10deg)",
-                width: "100%",
-              }}
-            />
-          </Box>
+        <Grid
+          item
+          xs={11}
+          sm={11}
+          md={8}
+          sx={{
+            position: "relative",
+            margin: "0 auto",
+          }}
+        >
           <FlexContainer
             sx={{
               flexDirection: "column",
@@ -66,25 +62,43 @@ function CareerGuide() {
               alignItems: "flex-start",
             }}
           >
-            <Box
+            <FlexContainer
               sx={{
                 marginX: "0",
                 paddingTop: "2rem",
+                flexDirection: {
+                  xs: "column",
+                  sm: "column",
+                  md: "row",
+                },
               }}
             >
               <Typography variant="CustomHeading1">Majors/Careers</Typography>
               <Typography
                 variant="CustomSubHeading"
-                sx={{ marginLeft: "5rem" }}
+                sx={{
+                  marginLeft: {
+                    xs: "0",
+                    sm: "0",
+                    md: "5rem",
+                  },
+                }}
               >
                 Explore majors, careers, and jobs
               </Typography>
-            </Box>
+            </FlexContainer>
             <Container
               sx={{
                 display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
+                flexDirection: {
+                  xs: "column",
+                  sm: "column",
+                  md: "row",
+                },
+                alignItems: {
+                  sm: "flex-start",
+                  md: "center",
+                },
                 justifyContent: "space-between",
                 marginY: "3rem",
               }}
@@ -107,9 +121,12 @@ function CareerGuide() {
                 </ToggleButton>
               </ToggleButtonGroup>
               <TextField
-                id="filled=search"
+                id="filled-search"
                 type="search"
-                sx={{ "& .MuiInputBase-input": { padding: "6px" } }}
+                sx={{
+                  "& .MuiInputBase-input": { padding: "6px" },
+                  paddingY: "1.5rem",
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -122,7 +139,21 @@ function CareerGuide() {
                 }}
               />
             </Container>
-            <FlexContainer sx={{ justifyContent: "space-between" }}>
+            <FlexContainer
+              sx={{
+                justifyContent: "space-between",
+                flexDirection: {
+                  xs: "column",
+                  sm: "column",
+                  md: "row",
+                },
+                alignItems: {
+                  xs: "flex-start",
+                  sm: "flex-start",
+                  md: "row",
+                },
+              }}
+            >
               <Typography display="inline" variant="CustomHeading3">
                 Major Result
               </Typography>
@@ -152,7 +183,7 @@ function CareerGuide() {
                   }}
                   disableClearable
                   defaultValue="A to Z"
-                  id="filter"
+                  id="filter_Search"
                   options={filters}
                   autoHighlight
                   renderInput={(params) => <TextField {...params} />}
@@ -181,7 +212,7 @@ function CareerGuide() {
             </Box>
           </FlexContainer>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={11} sm={11} md={4}>
           <GuideSidebar />
         </Grid>
       </Grid>
