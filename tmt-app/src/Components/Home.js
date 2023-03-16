@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import "../Styling/Home.css";
 import { PrimaryBtn, FlexContainer } from "../Styling/CustomStyling.js";
 import { Link, Container, Typography, Button } from "@mui/material";
@@ -10,8 +10,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Breadcrumb from "./Breadcrumb";
 import { Link as RouterLink } from "react-router-dom";
-const MajorCareerList = lazy(() => import("./MajorCareerList.js"));
-const GuideSidebar = lazy(() => import("./GuideSidebar.js"));
+import MajorCareerList from "./MajorCareerList.js";
+import GuideSidebar from "./GuideSidebar.js";
 
 function Home() {
   const [displayGuide, setDisplayGuide] = useState(false);
@@ -150,10 +150,8 @@ function Home() {
           zIndex: "-10",
         }}
       >
-        <Suspense fallback={<div>Loading...</div>}>
-          <MajorCareerList />
-          <GuideSidebar />
-        </Suspense>
+        <MajorCareerList />
+        <GuideSidebar />
       </Container>
     </Container>
   );
