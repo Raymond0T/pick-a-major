@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styling/Home.css";
 import { PrimaryBtn, FlexContainer } from "../Styling/CustomStyling.js";
-import { Link, Container, Typography, Button } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 import MilkTeaBlob from "../Images/MilkTeaBlob.png";
 import LycheeRectangle from "../Images/LycheeRectangle.png";
 import MilkTeaSwiggle2 from "../Images/MilkTeaSwiggle2.png";
@@ -9,7 +9,6 @@ import ThaiTeaSwiggle1 from "../Images/ThaiTeaSwiggle1.png";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Breadcrumb from "./Breadcrumb";
-import { Link as RouterLink } from "react-router-dom";
 import MajorCareerList from "./MajorCareerList.js";
 import GuideSidebar from "./GuideSidebar.js";
 
@@ -105,19 +104,6 @@ function Home() {
           </PrimaryBtn>
 
           <FlexContainer sx={{ marginTop: "4.5rem", flexDirection: "column" }}>
-            <Link
-              sx={{ color: "Boba.main", textDecoration: "underline" }}
-              underline="none"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Learn more about other different majors"
-              component={RouterLink}
-              to="/guide"
-            >
-              <Typography variant="CustomSubHeading">
-                view career and major list
-              </Typography>
-            </Link>
             <Button onClick={toggleDisplayGuide}>
               <Typography variant="CustomSubHeading">
                 See all Majors/Careers
