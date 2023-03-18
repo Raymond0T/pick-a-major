@@ -1,4 +1,4 @@
-import React from "react";
+import { React, Fragment } from "react";
 import { FlexContainer } from "../Styling/CustomStyling.js";
 import { Container, Typography } from "@mui/material";
 import { CAREERS_LIST, MAJORS_LIST } from "../constants/careerMajorList";
@@ -14,21 +14,21 @@ function MajorCareerList() {
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Major
         </Typography>
-        <div>
+        <Fragment>
           {MAJORS_LIST.map((item) => (
             <div key={item.id}>{item.name}</div>
           ))}
-        </div>
+        </Fragment>
       </Container>
       <Container>
         <Typography variant="CustomHeading3" sx={{ marginBottom: "1rem" }}>
           Careers
         </Typography>
-        <div>
+        <Fragment>
           {CAREERS_LIST.map((item) => (
             <div key={item.id}>{item.name}</div>
           ))}
-        </div>
+        </Fragment>
       </Container>
     </FlexContainer>
   );
