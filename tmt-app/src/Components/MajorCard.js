@@ -15,13 +15,13 @@ function MajorCard() {
       id: 0,
       name: "Education",
       desc: "testing",
-      icon: "/src/Images/icons/emotional_intelligence.svg",
+      icon: require("../Images/icons/emotional_intelligence.svg").default,
     },
     {
       id: 1,
       name: "Economics and Business",
       desc: "test fdasf afas fsadf dsf dsf edsf ds fsdaf sd f asfsd fea fgdsffdsf dfasdf ds fsdafsdf fgsdaf ased fasd few gasef sWEAFGASDFAS FDFSA DFA FSADF EAFSDASD FGREAASDFG EF GRasdfga gadfaefadf asf ",
-      icon: "/Images/icons/emotional_intelligence.svg",
+      icon: require("../Images/icons/chemistry.svg").default,
     },
   ];
   return (
@@ -43,6 +43,7 @@ function MajorCard() {
             key={item.id}
             sx={{
               display: "flex",
+              alignItems: "center",
               backgroundColor: "Matcha.main",
               borderRadius: "15px",
               color: "white",
@@ -53,11 +54,20 @@ function MajorCard() {
               image={item.icon}
               alt="icon"
               sx={{
-                padding: "1.5rem",
+                padding: {
+                  xs: "0.25rem",
+                  sm: "0.75rem",
+                  lg: "1.5rem",
+                },
                 margin: "1rem",
-                height: "100px",
-                minWidth: "100px",
-                maxWidth: "100px",
+                height: {
+                  xs: "50px",
+                  md: "100px",
+                },
+                width: {
+                  xs: "50px",
+                  md: "100px",
+                },
                 borderRadius: "5px",
                 backgroundColor: "BobaHighlight.main",
               }}
@@ -68,7 +78,11 @@ function MajorCard() {
                 width: "100%",
                 overflow: "hidden",
                 whiteSpace: "nowrap",
-                padding: "2.5rem",
+                padding: {
+                  xs: "0.75rem 1rem",
+                  md: "1.50rem",
+                  lg: "2rem",
+                },
               }}
             >
               <Container
@@ -82,6 +96,9 @@ function MajorCard() {
                   sx={{
                     display: "block",
                     width: "100%",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {item.name}
