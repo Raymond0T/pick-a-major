@@ -5,8 +5,7 @@ import { CustomTheme } from "./Styling/CustomStyling.js";
 import { ThemeProvider } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ResultsPage from "./Components/ResultsPage";
-import CareerPage from "./Components/CareerPage";
-import MajorPage from "./Components/MajorPage";
+import InfoLinkPage from "./Components/InfoLinkPage";
 import Quiz from "./Components/Quiz";
 import Receipt from "./Components/Receipt";
 
@@ -21,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/majors/:major",
-    element: <MajorPage />,
+    element: <InfoLinkPage />,
   },
   {
     path: "/careers/:career",
-    element: <CareerPage />,
+    element: <InfoLinkPage />,
   },
   {
     path: "/quiz/:step",

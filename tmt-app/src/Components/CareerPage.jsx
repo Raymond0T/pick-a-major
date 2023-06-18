@@ -88,9 +88,10 @@ function CareerPage() {
                           <ListItemText
                             key={`${item.name}-${index}`}
                             sx={{ display: "list-item" }}
-                          >
-                            <Typography variant="body">{item}</Typography>
-                          </ListItemText>
+                            primary={
+                              <Typography variant="body">{item}</Typography>
+                            }
+                          ></ListItemText>
                         );
                       })}
                     </List>

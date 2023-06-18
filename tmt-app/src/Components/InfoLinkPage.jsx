@@ -9,14 +9,16 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MAJORS_LIST } from "../utils/constants";
+import { MAJORS_LIST, CAREERS_LIST } from "../utils/constants";
 import Breadcrumb from "./Breadcrumb";
 import BobaIcon from "../Images/icons/boba.svg";
 import { Link } from "@mui/material";
 
 function MajorPage() {
   const params = useParams();
-  const data = MAJORS_LIST[params.major];
+  const data = params.major
+    ? MAJORS_LIST[params.major]
+    : CAREERS_LIST[params.career];
   const resources = [
     {
       name: "BobaTalks Resource Hub",
@@ -26,41 +28,72 @@ function MajorPage() {
       name: "BobaTalks Discord Server",
       link: "https://discord.com/invite/bobatalks",
     },
+    ...(params.career
+      ? [
+          {
+            name: "Career Information via Zippia",
+            link: data.link,
+          },
+        ]
+      : []),
   ];
-  let sectionInfo = [
-    {
-      title: `What is ${
-        ["a", "e", "i", "o", "u"].includes(data.name[0].toLowerCase())
-          ? "an "
-          : "a "
-      }
+  let sectionInfo = params.major
+    ? [
+        {
+          title: `What is ${
+            ["a", "e", "i", "o", "u"].includes(data.name[0].toLowerCase())
+              ? "an "
+              : "a "
+          }
       ${data.name} Major?`,
-      color: "BobaBeige.main",
-      info: data.desc,
-    },
-    {
-      title: "Classes",
-      color: "BobaPink.main",
-      info: data.classes,
-    },
-    {
-      title: `What skills do those in ${data.name} have?`,
-      color: "Lavender.main",
-      info: data.skills,
-    },
-    {
-      title: "Careers",
-      color: "BobaBeige.main",
-      info: data.careers,
-    },
-  ];
+          color: "BobaBeige.main",
+          info: data.desc,
+        },
+        {
+          title: "Classes",
+          color: "BobaPink.main",
+          info: data.classes,
+        },
+        {
+          title: `What skills do those in ${data.name} have?`,
+          color: "Lavender.main",
+          info: data.skills,
+        },
+        {
+          title: "Careers",
+          color: "BobaBeige.main",
+          info: data.careers,
+        },
+      ]
+    : [
+        {
+          title: `What is ${
+            ["a", "e", "i", "o", "u"].includes(data.name[0].toLowerCase())
+              ? "an "
+              : "a "
+          }
+      ${data.name} Career?`,
+          color: "BobaBeige.main",
+          info: data.desc,
+        },
+        {
+          title: "Related majors",
+          color: "BobaPink.main",
+          info: data.majors,
+        },
+        {
+          title: `What skills do those in ${data.name} have?`,
+          color: "Lavender.main",
+          info: data.skills,
+        },
+      ];
 
   return (
     <Container sx={{ minWidth: "70%" }}>
       <Breadcrumb
         breadcrumbs={[
           { url: "/", label: "Home" },
-          { label: `${data.name} (Major)` },
+          { label: `${data.name} ${params.major ? "(Major)" : "(Career)"}` },
         ]}
       />
       <Typography
@@ -70,7 +103,7 @@ function MajorPage() {
           textAlign: "center",
         }}
       >
-        {data.name} (Major)
+        {data.name} {`${params.major ? "(Major)" : "(Career)"}`}
       </Typography>
 
       <Grid
