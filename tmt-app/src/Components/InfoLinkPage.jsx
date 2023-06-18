@@ -103,7 +103,7 @@ function MajorPage() {
           textAlign: "center",
         }}
       >
-        {data.name} {`${params.major ? "(Major)" : "(Career)"}`}
+        {data.name} {params.major ? "(Major)" : "(Career)"}
       </Typography>
 
       <Grid
