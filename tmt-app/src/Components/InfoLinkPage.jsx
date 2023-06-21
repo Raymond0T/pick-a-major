@@ -13,6 +13,7 @@ import { MAJORS_LIST, CAREERS_LIST } from "../utils/constants";
 import Breadcrumb from "./Breadcrumb";
 import BobaIcon from "../Images/icons/boba.svg";
 import { Link } from "@mui/material";
+import { cardTitle } from "../utils/functions";
 
 function MajorPage() {
   const params = useParams();
@@ -40,12 +41,7 @@ function MajorPage() {
   let sectionInfo = params.major
     ? [
         {
-          title: `What is ${
-            ["a", "e", "i", "o", "u"].includes(data.name[0].toLowerCase())
-              ? "an "
-              : "a "
-          }
-      ${data.name} Major?`,
+          title: cardTitle(data.name, "Major"),
           color: "BobaBeige.main",
           info: data.desc,
         },
@@ -67,12 +63,7 @@ function MajorPage() {
       ]
     : [
         {
-          title: `What is ${
-            ["a", "e", "i", "o", "u"].includes(data.name[0].toLowerCase())
-              ? "an "
-              : "a "
-          }
-      ${data.name} Career?`,
+          title: cardTitle(data.name, "Career"),
           color: "BobaBeige.main",
           info: data.desc,
         },
