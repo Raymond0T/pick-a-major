@@ -9,17 +9,18 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MAJORS_LIST, CAREERS_LIST } from "../utils/constants";
+import { CAREERS_AND_MAJORS } from "../utils/constants";
 import Breadcrumb from "./Breadcrumb";
 import BobaIcon from "../Images/icons/boba.svg";
 import { Link } from "@mui/material";
-import { cardTitle } from "../utils/functions";
+import a from "indefinite";
+import { useMemo } from "react";
 
-function MajorPage() {
+function InfoLinkPage() {
   const params = useParams();
-  const data = params.major
-    ? MAJORS_LIST[params.major]
-    : CAREERS_LIST[params.career];
+
+  const { type, typeId } = params;
+
   const resources = [
     {
       name: "BobaTalks Resource Hub",
@@ -29,62 +30,74 @@ function MajorPage() {
       name: "BobaTalks Discord Server",
       link: "https://discord.com/invite/bobatalks",
     },
-    ...(params.career
+    ...(type === "careers" && typeId
       ? [
           {
             name: "Career Information via Zippia",
-            link: data.link,
+            link: CAREERS_AND_MAJORS[type][typeId].link,
           },
         ]
       : []),
   ];
-  let sectionInfo = params.major
-    ? [
+
+  const cards = useMemo(() => {
+    return {
+      majors: [
         {
-          title: cardTitle(data.name, "Major"),
+          title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} major?`,
           color: "BobaBeige.main",
-          info: data.desc,
+          info: CAREERS_AND_MAJORS[type][typeId].desc,
         },
         {
           title: "Classes",
           color: "BobaPink.main",
-          info: data.classes,
+          info: CAREERS_AND_MAJORS[type][typeId].classes,
         },
         {
-          title: `What skills do those in ${data.name} have?`,
+          title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
           color: "Lavender.main",
-          info: data.skills,
+          info: CAREERS_AND_MAJORS[type][typeId].skills,
         },
         {
           title: "Careers",
           color: "BobaBeige.main",
-          info: data.careers,
+          info: CAREERS_AND_MAJORS[type][typeId].careers,
         },
-      ]
-    : [
+      ],
+      careers: [
         {
-          title: cardTitle(data.name, "Career"),
+          title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} career?`,
           color: "BobaBeige.main",
-          info: data.desc,
+          info: CAREERS_AND_MAJORS[type][typeId].desc,
         },
         {
           title: "Related majors",
           color: "BobaPink.main",
-          info: data.majors,
+          info: CAREERS_AND_MAJORS[type][typeId].majors,
         },
         {
-          title: `What skills do those in ${data.name} have?`,
+          title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
           color: "Lavender.main",
-          info: data.skills,
+          info: CAREERS_AND_MAJORS[type][typeId].skills,
         },
-      ];
+      ],
+    };
+  }, [type, typeId]);
+
+  const currentInfo = useMemo(() => {
+    return CAREERS_AND_MAJORS[type][typeId];
+  }, [type, typeId]);
 
   return (
     <Container sx={{ minWidth: "70%" }}>
       <Breadcrumb
         breadcrumbs={[
           { url: "/", label: "Home" },
-          { label: `${data.name} ${params.major ? "(Major)" : "(Career)"}` },
+          {
+            label: `${currentInfo.name} ${
+              type === "majors" ? "(Major)" : "(Career)"
+            }`,
+          },
         ]}
       />
       <Typography
@@ -94,7 +107,7 @@ function MajorPage() {
           textAlign: "center",
         }}
       >
-        {data.name} {params.major ? "(Major)" : "(Career)"}
+        {currentInfo.name} {type === "majors" ? "(Major)" : "(Career)"}
       </Typography>
 
       <Grid
@@ -103,7 +116,7 @@ function MajorPage() {
         justifyContent="center"
         sx={{ paddingX: "1rem" }}
       >
-        {sectionInfo.map((item, index) => {
+        {cards[type].map((item, index) => {
           return (
             <Grid item key={index} xs={12} md={6}>
               <Card
@@ -194,4 +207,4 @@ function MajorPage() {
   );
 }
 
-export default MajorPage;
+export default InfoLinkPage;

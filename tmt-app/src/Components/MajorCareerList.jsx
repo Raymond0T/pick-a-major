@@ -1,7 +1,7 @@
 import { React, Fragment } from "react";
 import { FlexContainer } from "../Styling/CustomStyling";
 import { Box, Typography, Link } from "@mui/material";
-import { CAREERS_LIST, MAJORS_LIST } from "../utils/constants";
+import { CAREERS_AND_MAJORS } from "../utils/constants";
 import { Link as RouterLink } from "react-router-dom";
 
 function MajorCareerList() {
@@ -19,7 +19,7 @@ function MajorCareerList() {
           Majors
         </Typography>
         <Fragment>
-          {Object.values(MAJORS_LIST).map((item) => (
+          {Object.values(CAREERS_AND_MAJORS.majors).map((item) => (
             <div
               key={item.id}
               style={{
@@ -57,7 +57,7 @@ function MajorCareerList() {
           Careers
         </Typography>
         <Fragment>
-          {Object.values(CAREERS_LIST).map((item) => (
+          {Object.values(CAREERS_AND_MAJORS.careers).map((item) => (
             <div
               key={item.id}
               style={{

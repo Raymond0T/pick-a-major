@@ -19,11 +19,7 @@ const router = createBrowserRouter([
     element: <ResultsPage />,
   },
   {
-    path: "/majors/:major",
-    element: <InfoLinkPage />,
-  },
-  {
-    path: "/careers/:career",
+    path: "/:type/:typeId",
     element: <InfoLinkPage />,
   },
   {
