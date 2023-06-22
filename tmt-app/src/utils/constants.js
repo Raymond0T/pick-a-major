@@ -7,7 +7,16 @@ export const CAREERS_AND_MAJORS = {
       desc: "Accounting is the process of recording, classifying, and summarizing financial transactions to provide information that is useful in making business decisions. Finance is the study of how individuals and organizations manage their money, including the processes of acquiring and using financial resources over time. Accountants and financial professionals use tools such as financial statements and spreadsheets to analyze and interpret financial data, and they may also be involved in forecasting and budgeting, risk management, and decision-making",
       link: "https://www.zippia.com/accountant-jobs/",
       skills: ["Accounting", "Financial Reporting", "Data Management"],
-      majors: ["Computer Science & Math", "Economics & Business"],
+      majors: [
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        {
+          label: "Economics & Business",
+          url: "/majors/economics-and-business",
+        },
+      ],
       key: "accounting-finance",
     },
     art: {
@@ -16,7 +25,12 @@ export const CAREERS_AND_MAJORS = {
       desc: "An art career often refers to a job that involves being creative or producing works of art, often using a specific medium. This can include professionals who produce their own art, like painters and sculptors, as well as jobs that entail working with art or evaluating its value. Art careers encompass a broad field of subjects, from art history to interior design to illustration. Professionals typically choose a specific concentration in college and hone their skills for that particular industry. Many art careers exist in the entertainment industry, but you can also find artistic jobs in industries like marketing, fashion and news reporting",
       link: "https://www.zippia.com/artist-jobs/",
       skills: ["Communication", "Time Management", "Art Knowledge"],
-      majors: ["Visual Arts & Design"],
+      majors: [
+        {
+          label: "Visual Arts & Design",
+          url: "/majors/visual-arts-and-design",
+        },
+      ],
       key: "art",
     },
     consultant: {
@@ -26,9 +40,18 @@ export const CAREERS_AND_MAJORS = {
       link: "https://www.zippia.com/consultant-jobs/",
       skills: ["Communication", "Time Management", "Research"],
       majors: [
-        "Computer Science & Math",
-        "Economics & Business",
-        "Physical Science & Engineering",
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        {
+          label: "Economics & Business",
+          url: "/majors/economics-and-business",
+        },
+        {
+          label: "Physical Science & Engineering",
+          url: "/majors/physical-science-and-engineering",
+        },
       ],
       key: "consultant",
     },
@@ -38,7 +61,12 @@ export const CAREERS_AND_MAJORS = {
       desc: "Data science is the field that deals with the collection, analysis, and interpretation of large datasets. It involves using statistical and computational techniques to extract insights and knowledge from data, and applying this knowledge to solve real-world problems. Data scientists often use tools such as machine learning algorithms and programming languages like Python to analyze and interpret data",
       link: "https://www.zippia.com/data-scientist-jobs/",
       skills: ["Data Visualization", "Statistical Analysis", "Programming"],
-      majors: ["Computer Science & Math"],
+      majors: [
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+      ],
       key: "data-science",
     },
     design: {
@@ -48,10 +76,19 @@ export const CAREERS_AND_MAJORS = {
       link: "https://www.zippia.com/user-experience-designer-jobs/demographics/",
       skills: ["Design Software", "Design Principles"],
       majors: [
-        "Computer Science & Math",
-        "Performing Arts",
-        "Psychology & Neuroscience",
-        "Visual Arts & Design",
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        { label: "Performing Arts", url: "/majors/performing-arts" },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
+        {
+          label: "Visual Arts & Design",
+          url: "/majors/visual-arts-and-design",
+        },
       ],
       key: "design",
     },
@@ -61,7 +98,13 @@ export const CAREERS_AND_MAJORS = {
       desc: "Being a teacher involves planning and delivering lessons to students in a classroom setting, as well as grading assignments and providing feedback to help students learn and grow. Teachers also play a role in developing lesson plans, creating a positive learning environment, and fostering meaningful relationships with students. Teachers may work with students of all ages, from early childhood education to post-secondary education, and may specialize in a particular subject area or grade level",
       link: "https://www.zippia.com/teacher-jobs/",
       skills: ["Communication", "Empathy", "Subject Knowledge"],
-      majors: ["Education", "Humanities & Cultures"],
+      majors: [
+        { label: "Education", url: "/majors/education" },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+      ],
       key: "education",
     },
     "engineering-non-software": {
@@ -70,7 +113,16 @@ export const CAREERS_AND_MAJORS = {
       desc: "Engineering is the application of scientific, economic, and practical knowledge in order to design, build, and maintain structures, machines, devices, systems, and processes. Engineers use math and science to solve problems and improve the world around us through the design and development of new technologies and products",
       link: "https://www.zippia.com/engineer-jobs/",
       skills: ["Quality Control", "Troubleshooting"],
-      majors: ["Computer Science & Math", "Physical Science & Engineering"],
+      majors: [
+        {
+          label: "Computer Science & Math",
+          url: "majors/computer-science-and-math",
+        },
+        {
+          label: "Physical Science & Engineering",
+          url: "majors/physical-science-and-engineering",
+        },
+      ],
       key: "engineering-non-software",
     },
     "healthcare-professional": {
@@ -80,9 +132,18 @@ export const CAREERS_AND_MAJORS = {
       link: "https://www.zippia.com/health-care-provider-jobs/",
       skills: ["Communication", "Empathy", "Technical Knowledge"],
       majors: [
-        "Biology & Health",
-        "Humanities & Cultures",
-        "Psychology & Neuroscience",
+        {
+          label: "Biology & Health",
+          url: "/majors/biology-and-health",
+        },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
       ],
       key: "healthcare-professional",
     },
@@ -97,11 +158,23 @@ export const CAREERS_AND_MAJORS = {
         "Learning and Development",
       ],
       majors: [
-        "Economics & Business",
-        "Education",
-        "Humanities & Cultures",
-        "Psychology & Neuroscience",
-        "Social & Political Science",
+        {
+          label: "Economics & Business",
+          url: "/majors/economics-and-business",
+        },
+        { label: "Education", url: "/majors/education" },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
+        {
+          label: "Social & Political Science",
+          url: "/majors/social-and-political-science",
+        },
       ],
       key: "hr",
     },
@@ -116,7 +189,12 @@ export const CAREERS_AND_MAJORS = {
         "Risk Management",
         "Physical Science & Engineering",
       ],
-      majors: ["Computer Science & Math"],
+      majors: [
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+      ],
       key: "investment-banking",
     },
     "law-legal": {
@@ -126,10 +204,19 @@ export const CAREERS_AND_MAJORS = {
       link: "https://www.zippia.com/lawyer-jobs/",
       skills: ["Information Analysis", "Public Speaking", "Writing"],
       majors: [
-        "Economics & Business",
-        "Languages",
-        "Physical Science & Engineering",
-        "Social & Political Science",
+        {
+          label: "Economics & Business",
+          url: "/majors/economics-and-business",
+        },
+        { label: "Languages", url: "/majors/languages" },
+        {
+          label: "Physical Science & Engineering",
+          url: "/majors/physical-science-and-engineering",
+        },
+        {
+          label: "Social & Political Science",
+          url: "/majors/social-and-political-science",
+        },
       ],
       key: "law-legal",
     },
@@ -144,12 +231,28 @@ export const CAREERS_AND_MAJORS = {
         "Customer Relationship Management",
       ],
       majors: [
-        "Economics & Business",
-        "Humanities & Cultures",
-        "Languages",
-        "Psychology & Neuroscience",
-        "Social & Political Science",
+        {
+          label: "Economics & Business",
+          url: "/majors/economics-and-business",
+        },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+        {
+          label: "Languages",
+          url: "/majors/languages",
+        },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
+        {
+          label: "Social & Political Science",
+          url: "/majors/social-and-political-science",
+        },
       ],
+
       key: "marketing",
     },
     "product-management": {
@@ -159,9 +262,18 @@ export const CAREERS_AND_MAJORS = {
       link: "https://www.zippia.com/product-manager-jobs/demographics/",
       skills: ["Market Research", "Product Vision", "Roadmapping"],
       majors: [
-        "Computer Science & Math",
-        "Physical Science & Engineering",
-        "Visual Arts & Design",
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        {
+          label: "Physical Science & Engineering",
+          url: "physical-science-and-engineering",
+        },
+        {
+          label: "Visual Arts & Design",
+          url: "/majors/visual-arts-and-design",
+        },
       ],
       key: "product-management",
     },
@@ -177,12 +289,24 @@ export const CAREERS_AND_MAJORS = {
         "Change Management",
       ],
       majors: [
-        "Computer Science & Math",
-        "Economics & Business",
-        "Education",
-        "Humanities & Cultures",
-        "Physical Science & Engineering",
-        "Psychology & Neuroscience",
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        { label: "Economics & Business", url: "economics-and-business" },
+        { label: "Education", url: "/majors/education" },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+        {
+          label: "Physical Science & Engineering",
+          url: "/majors/physical-science-and-engineering",
+        },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
       ],
       key: "project-program-management",
     },
@@ -197,12 +321,21 @@ export const CAREERS_AND_MAJORS = {
         "Talent Analytics",
       ],
       majors: [
-        "Education",
-        "Humanities & Cultures",
-        "Languages",
-        "Performing Arts",
-        "Psychology & Neuroscience",
-        "Social & Political Science",
+        { label: "Education", url: "/majors/education" },
+        {
+          label: "Humanities & Cultures",
+          url: "/majors/humanities-and-cultures",
+        },
+        { label: "Languages", url: "/majors/languages" },
+        { label: "Performing Arts", url: "/majors/performing-arts" },
+        {
+          label: "Psychology & Neuroscience",
+          url: "/majors/psychology-and-neuroscience",
+        },
+        {
+          label: "Social & Political Science",
+          url: "/majors/social-and-political-science",
+        },
       ],
       key: "recruiting",
     },
@@ -212,7 +345,16 @@ export const CAREERS_AND_MAJORS = {
       desc: "A software engineer is responsible for designing, developing, and maintaining software systems. This involves working with a team to identify the needs of the users, writing and testing code, and ensuring that the software is efficient, reliable, and easy to use. Software engineers may also be involved in the ongoing maintenance and improvement of existing software systems",
       link: "https://www.zippia.com/software-engineer-jobs/",
       skills: ["Programming", "Software Architecture", "Software Testing"],
-      majors: ["Computer Science & Math", "Physical Science & Engineering"],
+      majors: [
+        {
+          label: "Computer Science & Math",
+          url: "/majors/computer-science-and-math",
+        },
+        {
+          label: "Physical Science & Engineering",
+          url: "/majors/physical-science-and-engineering",
+        },
+      ],
       key: "software-engineering",
     },
   },
@@ -229,7 +371,12 @@ export const CAREERS_AND_MAJORS = {
         "Gene Expression",
       ],
       skills: ["Technical Communication", "Research", "Data Analysis"],
-      careers: ["Healthcare Professionals"],
+      careers: [
+        {
+          label: "Healthcare Professionals",
+          url: "/careers/healthcare-professionals",
+        },
+      ],
       key: "biology-and-health",
     },
     "computer-science-and-math": {
@@ -253,15 +400,18 @@ export const CAREERS_AND_MAJORS = {
         "Cloud Skills",
       ],
       careers: [
-        "Software Engineering",
-        "Data Science",
-        "Product Management",
-        "Design",
-        "Project/Program Management",
-        "Engineering",
-        "Accounting/Finance",
-        "Investment Banking",
-        "Consultant",
+        { label: "Software Engineering", url: "/careers/software-engineering" },
+        { label: "Data Science", url: "/careers/data-science" },
+        { label: "Product Management", url: "/careers/product-management" },
+        { label: "Design", url: "/careers/design" },
+        {
+          label: "Project/Program Management",
+          url: "/careers/project-program-management",
+        },
+        { label: "Engineering", url: "/careers/engineering" },
+        { label: "Accounting/Finance", url: "/careers/accounting-finance" },
+        { label: "Investment Banking", url: "/careers/investment-banking" },
+        { label: "Consultant", url: "/careers/consultant" },
       ],
       key: "computer-science-and-math",
     },
@@ -277,12 +427,15 @@ export const CAREERS_AND_MAJORS = {
         "Presentation Skills",
       ],
       careers: [
-        "Accounting/Finance",
-        "Project/Program Management",
-        "Marketing",
-        "HR",
-        "Consultant",
-        "Law/Legal",
+        { label: "Accounting/Finance", url: "/careers/accounting-finance" },
+        {
+          label: "Project/Program Management",
+          url: "/careers/project-program-management",
+        },
+        { label: "Marketing", url: "/careers/marketing" },
+        { label: "HR", url: "/careers/hr" },
+        { label: "Consultant", url: "/careers/consultant" },
+        { label: "Law/Legal", url: "/careers/law-legal" },
       ],
       key: "economics-and-business",
     },
@@ -296,7 +449,15 @@ export const CAREERS_AND_MAJORS = {
         "Social Issues in Education",
       ],
       skills: ["People Management", "Conflict Resolution"],
-      careers: ["Project/Program Management", "HR", "Recruiting", "Education"],
+      careers: [
+        { label: "Education", url: "/careers/education" },
+        { label: "HR", url: "/careers/hr" },
+        { label: "Recruiting", url: "/careers/recruiting" },
+        {
+          label: "Project/Program Management",
+          url: "/careers/project-program-management",
+        },
+      ],
       key: "education",
     },
     "humanities-and-cultures": {
@@ -306,12 +467,18 @@ export const CAREERS_AND_MAJORS = {
       classes: ["Food in Culture", "Comparative Literature", "Race Theory"],
       skills: ["Critical Thinking", "Written Communication", "Empathy"],
       careers: [
-        "HR",
-        "Marketing",
-        "Healthcare Professionals",
-        "Project/Program Management",
-        "Recruiting",
-        "Education",
+        { label: "HR", url: "/careers/hr" },
+        { label: "Marketing", url: "/careers/marketing" },
+        {
+          label: "Healthcare Professionals",
+          url: "/careers/healthcare-professionals",
+        },
+        {
+          label: "Project/Program Management",
+          url: "/careers/project-program-management",
+        },
+        { label: "Recruiting", url: "/careers/recruiting" },
+        { label: "Education", url: "/careers/education" },
       ],
       key: "humanities-and-cultures",
     },
@@ -325,7 +492,11 @@ export const CAREERS_AND_MAJORS = {
         "Linguistics",
       ],
       skills: ["Critical Thinking", "Written Communication", "Empathy"],
-      careers: ["Marketing", "Recruiting", "Law/Legal"],
+      careers: [
+        { label: "Marketing", url: "/careers/marketing" },
+        { label: "Recruiting", url: "/careers/recruiting" },
+        { label: "Law/Legal", url: "/careers/law-legal" },
+      ],
       key: "languages",
     },
     "performing-arts": {
@@ -339,7 +510,10 @@ export const CAREERS_AND_MAJORS = {
         "Entertainment Engineering & Management",
       ],
       skills: ["Public Speaking", "Creativity"],
-      careers: ["Design", "Recruiting"],
+      careers: [
+        { label: "Design", url: "/careers/design" },
+        { label: "Recruiting", url: "/careers/recruiting" },
+      ],
       key: "performing-arts",
     },
     "physical-science-and-engineering": {
@@ -357,13 +531,22 @@ export const CAREERS_AND_MAJORS = {
         "Mathematical/Logical Reasoning",
       ],
       careers: [
-        "Engineering",
-        "Software Engineering",
-        "Product Management",
-        "Project/Program Management",
-        "Investment Banking",
-        "Consultant",
-        "Law/Legal",
+        {
+          label: "Engineering",
+          url: "/careers/engineering",
+        },
+        {
+          label: "Software Engineering",
+          url: "/careers/software-engineering",
+        },
+        { label: "Product Management", url: "/careers/product-management" },
+        {
+          label: "Project/Program Management",
+          url: "/careers/project-program-management",
+        },
+        { label: "Investment Banking", url: "/careers/investment-banking" },
+        { label: "Consultant", url: "/careers/consultant" },
+        { label: "Law/Legal", url: "/careers/law-legal" },
       ],
       key: "physical-science-and-engineering",
     },
@@ -383,12 +566,18 @@ export const CAREERS_AND_MAJORS = {
         "Statistical and Computing Techniques",
       ],
       careers: [
-        "Design",
-        "HR",
-        "Healthcare Professional",
-        "Project/Program Management",
-        "Marketing",
-        "Recruiting",
+        {
+          label: "Healthcare Professional",
+          url: "/careers/healthcare-professional",
+        },
+        { label: "HR", url: "/careers/hr" },
+        { label: "Marketing", url: "/careers/marketing" },
+        { label: "Recruiting", url: "/careers/recruiting" },
+        { label: "Design", url: "/careers/design" },
+        {
+          label: "Product/Program Management",
+          url: "/careers/product-program-management",
+        },
       ],
       key: "psychology-and-neuroscience",
     },
@@ -406,7 +595,12 @@ export const CAREERS_AND_MAJORS = {
         "Critical Thinking",
         "Presentation/Public Skills",
       ],
-      careers: ["HR", "Law/Legal", "Recruiting", "Marketing", "Law/Legal"],
+      careers: [
+        { label: "HR", url: "/careers/hr" },
+        { label: "Marketing", url: "/careers/marketing" },
+        { label: "Recruiting", url: "/careers/recruiting" },
+        { label: "Law/Legal", url: "/careers/law-legal" },
+      ],
       key: "social-and-political-science",
     },
     "visual-arts-and-design": {
@@ -419,7 +613,14 @@ export const CAREERS_AND_MAJORS = {
         "Sculpture/Drawing/Painting",
       ],
       skills: ["Creativity", "Empathy", "Computer software skills"],
-      careers: ["Design", "Art", "Product Management"],
+      careers: [
+        {
+          label: "Design",
+          url: "/careers/design",
+        },
+        { label: "Art", url: "/careers/art" },
+        { label: "Product Management", url: "/careers/product-management" },
+      ],
       key: "visual-arts-and-design",
     },
   },

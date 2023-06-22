@@ -139,12 +139,29 @@ function InfoLinkPage() {
                       }}
                     >
                       {item.info.map((item, index) => {
-                        return (
+                        return typeof item === "string" ? (
                           <ListItemText
-                            key={`${item.name}-${index}`}
+                            key={`${item.label}-${index}`}
                             sx={{ display: "list-item" }}
                           >
                             <Typography variant="body">{item}</Typography>
+                          </ListItemText>
+                        ) : (
+                          <ListItemText
+                            key={`${item.label}-${index}`}
+                            sx={{ display: "list-item" }}
+                          >
+                            <Link
+                              href={item.url}
+                              sx={{
+                                color: "Boba.main",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              <Typography variant="body">
+                                {item.label}
+                              </Typography>
+                            </Link>
                           </ListItemText>
                         );
                       })}
@@ -161,7 +178,7 @@ function InfoLinkPage() {
           <Card
             sx={{
               boxShadow: "none",
-              backgroundColor: "Avacado.main",
+              backgroundColor: "Avocado.main",
               height: "100%",
               boxSizing: "border-box",
             }}

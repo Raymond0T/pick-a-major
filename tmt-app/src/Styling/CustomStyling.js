@@ -42,7 +42,7 @@ export const CustomTheme = createTheme({
     Lavender: {
       main: "#F6F1FF",
     },
-    Avacado: {
+    Avocado: {
       main: "#F0F6E2",
     },
   },
