@@ -18,7 +18,6 @@ import { useMemo } from "react";
 
 function InfoLinkPage() {
   const params = useParams();
-
   const { type, typeId } = params;
 
   const resources = [
