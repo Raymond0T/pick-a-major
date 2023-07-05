@@ -116,11 +116,11 @@ export const CAREERS_AND_MAJORS = {
       majors: [
         {
           label: "Computer Science & Math",
-          url: "majors/computer-science-and-math",
+          url: "/majors/computer-science-and-math",
         },
         {
           label: "Physical Science & Engineering",
-          url: "majors/physical-science-and-engineering",
+          url: "/majors/physical-science-and-engineering",
         },
       ],
       key: "engineering-non-software",
@@ -268,7 +268,7 @@ export const CAREERS_AND_MAJORS = {
         },
         {
           label: "Physical Science & Engineering",
-          url: "physical-science-and-engineering",
+          url: "/majors/physical-science-and-engineering",
         },
         {
           label: "Visual Arts & Design",
@@ -408,7 +408,10 @@ export const CAREERS_AND_MAJORS = {
           label: "Project/Program Management",
           url: "/careers/project-program-management",
         },
-        { label: "Engineering", url: "/careers/engineering" },
+        {
+          label: "Engineering (non-software)",
+          url: "/careers/engineering-non-software",
+        },
         { label: "Accounting/Finance", url: "/careers/accounting-finance" },
         { label: "Investment Banking", url: "/careers/investment-banking" },
         { label: "Consultant", url: "/careers/consultant" },
@@ -532,8 +535,8 @@ export const CAREERS_AND_MAJORS = {
       ],
       careers: [
         {
-          label: "Engineering",
-          url: "/careers/engineering",
+          label: "Engineering (non-software)",
+          url: "/careers/engineering-non-software",
         },
         {
           label: "Software Engineering",

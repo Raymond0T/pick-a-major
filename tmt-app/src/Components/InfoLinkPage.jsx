@@ -140,7 +140,7 @@ function InfoLinkPage() {
                       {item.info.map((item, index) => {
                         return typeof item === "string" ? (
                           <ListItemText
-                            key={`${item.label}-${index}`}
+                            key={`${CAREERS_AND_MAJORS[type][typeId].name}-${index}`}
                             sx={{ display: "list-item" }}
                           >
                             <Typography variant="body">{item}</Typography>
