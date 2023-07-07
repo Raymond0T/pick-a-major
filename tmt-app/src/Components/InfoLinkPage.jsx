@@ -14,7 +14,6 @@ import Breadcrumb from "./Breadcrumb";
 import BobaIcon from "../Images/icons/boba.svg";
 import { Link } from "@mui/material";
 import a from "indefinite";
-import { useMemo } from "react";
 
 function InfoLinkPage() {
   const params = useParams();
@@ -39,53 +38,49 @@ function InfoLinkPage() {
       : []),
   ];
 
-  const cards = useMemo(() => {
-    return {
-      majors: [
-        {
-          title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} major?`,
-          color: "BobaBeige.main",
-          info: CAREERS_AND_MAJORS[type][typeId].desc,
-        },
-        {
-          title: "Classes",
-          color: "BobaPink.main",
-          info: CAREERS_AND_MAJORS[type][typeId].classes,
-        },
-        {
-          title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
-          color: "Lavender.main",
-          info: CAREERS_AND_MAJORS[type][typeId].skills,
-        },
-        {
-          title: "Careers",
-          color: "BobaBeige.main",
-          info: CAREERS_AND_MAJORS[type][typeId].careers,
-        },
-      ],
-      careers: [
-        {
-          title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} career?`,
-          color: "BobaBeige.main",
-          info: CAREERS_AND_MAJORS[type][typeId].desc,
-        },
-        {
-          title: "Related majors",
-          color: "BobaPink.main",
-          info: CAREERS_AND_MAJORS[type][typeId].majors,
-        },
-        {
-          title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
-          color: "Lavender.main",
-          info: CAREERS_AND_MAJORS[type][typeId].skills,
-        },
-      ],
-    };
-  }, [type, typeId]);
+  const cards = {
+    majors: [
+      {
+        title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} major?`,
+        color: "BobaBeige.main",
+        info: CAREERS_AND_MAJORS[type][typeId].desc,
+      },
+      {
+        title: "Classes",
+        color: "BobaPink.main",
+        info: CAREERS_AND_MAJORS[type][typeId].classes,
+      },
+      {
+        title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
+        color: "Lavender.main",
+        info: CAREERS_AND_MAJORS[type][typeId].skills,
+      },
+      {
+        title: "Careers",
+        color: "BobaBeige.main",
+        info: CAREERS_AND_MAJORS[type][typeId].careers,
+      },
+    ],
+    careers: [
+      {
+        title: `What is ${a(CAREERS_AND_MAJORS[type][typeId].name)} career?`,
+        color: "BobaBeige.main",
+        info: CAREERS_AND_MAJORS[type][typeId].desc,
+      },
+      {
+        title: "Related majors",
+        color: "BobaPink.main",
+        info: CAREERS_AND_MAJORS[type][typeId].majors,
+      },
+      {
+        title: `What skills do those in ${CAREERS_AND_MAJORS[type][typeId].name} have?`,
+        color: "Lavender.main",
+        info: CAREERS_AND_MAJORS[type][typeId].skills,
+      },
+    ],
+  };
 
-  const currentInfo = useMemo(() => {
-    return CAREERS_AND_MAJORS[type][typeId];
-  }, [type, typeId]);
+  const currentInfo = CAREERS_AND_MAJORS[type][typeId];
 
   return (
     <Container sx={{ minWidth: "70%" }}>
