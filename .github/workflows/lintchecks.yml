@@ -22,6 +22,9 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tmt-app
     permissions:
       contents: read
       security-events: write
@@ -30,11 +33,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install ESLint and Prettier
-        run: |
-          cd tmt-app
-          npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-      - name: Run ESLint and Prettier
+      - name: Run Lint checks
         run: npm run lint
         continue-on-error: false
