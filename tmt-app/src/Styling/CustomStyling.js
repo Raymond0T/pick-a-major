@@ -46,6 +46,9 @@ export const CustomTheme = createTheme({
     Avocado: {
       main: '#F0F6E2',
     },
+    Text: {
+      main: '#1B1D2E',
+    },
   },
   typography: {
     h1: {

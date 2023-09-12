@@ -6,7 +6,7 @@ import { CustomTheme } from '../Styling/CustomStyling';
 import { CLASS_SUBJECT_LIST, SOFT_SKILL_LIST } from '../utils/constants';
 import BobaBot from './BobaBot';
 import QuestionCard from './QuestionCard';
-import QuizButtonContainer from './QuizButtonContainer';
+import QuizStepper from './QuizStepper';
 
 function Quiz() {
   const { step } = useParams();
@@ -19,6 +19,7 @@ function Quiz() {
 
   return (
     <Container sx={{ width: '100%' }}>
+      <QuizStepper />
       <Text step={step} />
       <Grid container justifyContent={{ xs: 'center', lg: 'flex-start' }}>
         {data.map((item) => (

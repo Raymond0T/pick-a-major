@@ -1,7 +1,14 @@
 import React from 'react';
 
+import QuizStepper from './QuizStepper';
+
 function Receipt() {
-  return <>Receipt Page</>;
+  return (
+    <>
+      <QuizStepper />
+      Receipt Page
+    </>
+  );
 }
 
 export default Receipt;
