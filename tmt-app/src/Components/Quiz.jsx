@@ -6,10 +6,13 @@ import { CustomTheme } from '../Styling/CustomStyling';
 import { CLASS_SUBJECT_LIST, SOFT_SKILL_LIST } from '../utils/constants';
 import BobaBot from './BobaBot';
 import QuestionCard from './QuestionCard';
+import QuizButtonContainer from './QuizButtonContainer';
 import QuizStepper from './QuizStepper';
+import Receipt from './Receipt';
 
 function Quiz() {
   const { step } = useParams();
+  const routes = ['home', 'classes', 'skills', 'receipt'];
 
   const dataSets = {
     classes: CLASS_SUBJECT_LIST,
@@ -21,14 +24,19 @@ function Quiz() {
     <Container sx={{ width: '100%' }}>
       <QuizStepper />
       <Text step={step} />
-      <Grid container justifyContent={{ xs: 'center', lg: 'flex-start' }}>
-        {data.map((item) => (
-          <Grid item key={item.title}>
-            <QuestionCard item={item} />
+      {step !== 'receipt' && (
+        <>
+          <Grid container justifyContent={{ xs: 'center', lg: 'flex-start' }}>
+            {data.map((item) => (
+              <Grid item key={item.title}>
+                <QuestionCard item={item} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-      <QuizButtonContainer step={step} />
+          <QuizButtonContainer step={routes.indexOf(step)} route={routes} />
+        </>
+      )}
+      {step === 'receipt' && <Receipt />}
     </Container>
   );
 }
@@ -46,6 +54,12 @@ function Text({ step }) {
       title2: 'What skills would you like to use in a career?',
       subtitle: 'Select more than one.',
       bobaBot: '6 is the maximum.',
+    },
+    receipt: {
+      title1: 'Thank you for your order! Below are your results.',
+      title2: '',
+      subtitle: '',
+      bobaBot: 'Screenshot your result',
     },
   };
 

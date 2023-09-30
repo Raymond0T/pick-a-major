@@ -11,7 +11,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import HomeIcon from '../Images/icons/boba_progress/Home.svg';
 import OrderUpIcon from '../Images/icons/boba_progress/OrderUp.svg';
@@ -98,19 +98,14 @@ function ProgressIcon(props) {
 }
 
 export default function QuizStepper() {
-  const location = useLocation();
-  const routes = {
-    '/': 0,
-    '/quiz/classes': 1,
-    '/quiz/skills': 2,
-    '/receipt': 3,
-  };
+  const params = useParams();
+  const routes = ['start', 'classes', 'skills', 'receipt'];
 
   return (
     <Box sx={{ my: '3rem' }}>
       <Stepper
         alternativeLabel
-        activeStep={routes[location.pathname]}
+        activeStep={routes.indexOf(params.step)}
         connector={<ProgressConnector />}
       >
         {Object.keys(routes).map((route, index) => (

@@ -1,8 +1,12 @@
 import { Box, Button, Link } from '@mui/material';
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
-function QuizButtonContainer({ step }) {
+function QuizButtonContainer({ step, route }) {
+  const navigate = useNavigate();
+  const goBackward = () => {
+    navigate(-1);
+  };
   return (
     <Box
       sx={{
@@ -17,7 +21,7 @@ function QuizButtonContainer({ step }) {
         underline="none"
         aria-label="quiz-backward"
         component={RouterLink}
-        to="/quiz/skills"
+        onClick={goBackward}
       >
         <Button variant="quizButton" color="secondary">
           Back
@@ -28,10 +32,10 @@ function QuizButtonContainer({ step }) {
         underline="none"
         aria-label="quiz-forward"
         component={RouterLink}
-        to="/quiz/skills"
+        to={`/quiz/${route[step + 1]}`}
       >
         <Button variant="quizButton" color="primary">
-          {step === 'classes' ? 'Next Question' : "I'm Finished"}
+          {step === route.length - 2 ? "I'm Finished" : 'Next Question'}
         </Button>
       </Link>
     </Box>
