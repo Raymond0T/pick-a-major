@@ -1,5 +1,5 @@
 import { Container, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { CustomTheme } from '../Styling/CustomStyling';
@@ -13,6 +13,11 @@ import Receipt from './Receipt';
 function Quiz() {
   const { step } = useParams();
   const routes = ['home', 'classes', 'skills', 'receipt'];
+
+  let userSelection =
+    step === 'classes'
+      ? JSON.parse(window.sessionStorage.getItem('classUserSelect'))
+      : JSON.parse(window.sessionStorage.getItem('skillUserSelect'));
 
   const dataSets = {
     classes: CLASS_SUBJECT_LIST,
@@ -28,8 +33,12 @@ function Quiz() {
         <>
           <Grid container justifyContent={{ xs: 'center', lg: 'flex-start' }}>
             {data.map((item) => (
-              <Grid item key={item.title}>
-                <QuestionCard item={item} />
+              <Grid item key={item.key}>
+                <QuestionCard
+                  item={item}
+                  page={step}
+                  selection={userSelection}
+                />
               </Grid>
             ))}
           </Grid>

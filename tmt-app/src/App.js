@@ -13,6 +13,7 @@ import ResultsPage from './Components/ResultsPage';
 import ScrollToTopButton from './Components/ScrollToTopButton';
 import Team from './Components/Team';
 import { CustomTheme } from './Styling/CustomStyling.js';
+import { CLASS_SUBJECT_LIST, SOFT_SKILL_LIST } from './utils/constants';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const classMap = {};
+  const skillMap = {};
+  CLASS_SUBJECT_LIST.map((item) => (classMap[item.key] = false));
+  SOFT_SKILL_LIST.map((item) => (skillMap[item.key] = false));
+
+  window.sessionStorage.setItem('classUserSelect', JSON.stringify(classMap));
+  window.sessionStorage.setItem('skillUserSelect', JSON.stringify(skillMap));
+
   return (
     <div className="App">
       <ThemeProvider theme={CustomTheme}>

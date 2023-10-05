@@ -7,6 +7,7 @@ function QuizButtonContainer({ step, route }) {
   const goBackward = () => {
     navigate(-1);
   };
+
   return (
     <Box
       sx={{

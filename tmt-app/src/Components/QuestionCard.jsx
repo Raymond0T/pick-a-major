@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { CustomTheme } from '../Styling/CustomStyling';
 import IconSvg from './IconSvg.jsx';
 
-const QuestionCard = ({ item }) => {
+const QuestionCard = ({ item, page, selection }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(selection[item.key]);
 
   const handleHover = () => {
     setIsHovered(true);
@@ -17,7 +17,19 @@ const QuestionCard = ({ item }) => {
   };
 
   const handleClick = () => {
-    setIsSelected(!isSelected);
+    const temp = selection;
+
+    for (const [key, value] of Object.entries(temp)) {
+      if (item.key === key) {
+        temp[item.key] = !value;
+        break;
+      }
+    }
+    window.sessionStorage.setItem(
+      page === 'classes' ? 'classUserSelect' : 'skillUserSelect',
+      JSON.stringify(temp),
+    );
+    setIsSelected(temp[item.key]);
   };
 
   const sx = {
@@ -35,7 +47,7 @@ const QuestionCard = ({ item }) => {
     transition: 'all 0.3s ease-in-out',
   };
 
-  const StyledBox = styled(Box)(({ isSelected }) => ({
+  const StyledBox = styled(Box)(({ ownerState: { isSelected } }) => ({
     background: isSelected
       ? CustomTheme.palette.ThaiTea.main
       : CustomTheme.palette.BobaHighlight.main,
@@ -54,7 +66,7 @@ const QuestionCard = ({ item }) => {
 
   return (
     <StyledBox
-      isSelected={isSelected}
+      ownerState={{ isSelected }}
       key={item.name}
       sx={sx}
       onClick={handleClick}
