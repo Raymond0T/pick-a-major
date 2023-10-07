@@ -13,6 +13,9 @@ import Receipt from './Receipt';
 function Quiz() {
   const { step } = useParams();
   const routes = ['home', 'classes', 'skills', 'receipt'];
+  let count = { classes: 0, skills: 0 };
+  const [disabled, setDisabled] = useState({ classes: true, skills: true });
+  const max = { classes: 3, skills: 3 };
 
   let userSelection =
     step === 'classes'
@@ -24,6 +27,36 @@ function Quiz() {
     skills: SOFT_SKILL_LIST,
   };
   const data = dataSets[step] || dataSets['classes'];
+
+  //Check to see if user selected the max amount of card yet
+  const checkMax = () => {
+    if (step === 'classes') {
+      if (count.classes === max.classes) {
+        setDisabled({ ...disabled, classes: false });
+      } else if (count.classes < max.classes || count.classes > max.classes) {
+        setDisabled({ ...disabled, classes: true });
+      }
+    } else {
+      if (count.skills === max.skills) {
+        setDisabled({ ...disabled, skills: false });
+      } else if (count.skills < max.skills || count.skills > max.skills) {
+        setDisabled({ ...disabled, skills: true });
+      }
+    }
+  };
+
+  //Check for amount of cards user already selected
+  const handleCountChange = () => {
+    let tempCount = 0;
+    for (const value of Object.values(userSelection)) {
+      if (value === true) {
+        tempCount += 1;
+      }
+    }
+
+    count = { ...count, [step]: tempCount };
+    checkMax();
+  };
 
   return (
     <Container sx={{ width: '100%' }}>
@@ -38,11 +71,13 @@ function Quiz() {
                   item={item}
                   page={step}
                   selection={userSelection}
+                  handleCountChange={handleCountChange}
+                  disabled={disabled}
                 />
               </Grid>
             ))}
           </Grid>
-          <QuizButtonContainer step={routes.indexOf(step)} route={routes} />
+          <QuizButtonContainer step={step} route={routes} disable={disabled} />
         </>
       )}
       {step === 'receipt' && <Receipt />}

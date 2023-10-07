@@ -4,7 +4,13 @@ import React, { useState } from 'react';
 import { CustomTheme } from '../Styling/CustomStyling';
 import IconSvg from './IconSvg.jsx';
 
-const QuestionCard = ({ item, page, selection }) => {
+const QuestionCard = ({
+  item,
+  page,
+  selection,
+  handleCountChange,
+  disabled,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isSelected, setIsSelected] = useState(selection[item.key]);
 
@@ -18,7 +24,6 @@ const QuestionCard = ({ item, page, selection }) => {
 
   const handleClick = () => {
     const temp = selection;
-
     for (const [key, value] of Object.entries(temp)) {
       if (item.key === key) {
         temp[item.key] = !value;
@@ -30,6 +35,7 @@ const QuestionCard = ({ item, page, selection }) => {
       JSON.stringify(temp),
     );
     setIsSelected(temp[item.key]);
+    handleCountChange();
   };
 
   const sx = {
@@ -45,6 +51,9 @@ const QuestionCard = ({ item, page, selection }) => {
     width: '240px',
     textAlign: 'center',
     transition: 'all 0.3s ease-in-out',
+    cursor: 'pointer',
+    opacity: !selection[item.key] && !disabled[page] ? '50%' : '100%',
+    pointerEvents: !selection[item.key] && !disabled[page] ? 'none' : 'auto',
   };
 
   const StyledBox = styled(Box)(({ ownerState: { isSelected } }) => ({
